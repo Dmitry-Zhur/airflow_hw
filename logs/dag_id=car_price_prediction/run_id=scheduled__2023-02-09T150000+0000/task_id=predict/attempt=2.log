@@ -1,0 +1,38 @@
+[2024-12-01T12:35:25.836+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: car_price_prediction.predict scheduled__2023-02-09T15:00:00+00:00 [queued]>
+[2024-12-01T12:35:25.854+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: car_price_prediction.predict scheduled__2023-02-09T15:00:00+00:00 [queued]>
+[2024-12-01T12:35:25.854+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-01T12:35:25.855+0000] {taskinstance.py:1280} INFO - Starting attempt 2 of 2
+[2024-12-01T12:35:25.855+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-01T12:35:25.877+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): predict> on 2023-02-09 15:00:00+00:00
+[2024-12-01T12:35:25.886+0000] {standard_task_runner.py:55} INFO - Started process 614 to run task
+[2024-12-01T12:35:25.889+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'car_price_prediction', 'predict', 'scheduled__2023-02-09T15:00:00+00:00', '--job-id', '966', '--raw', '--subdir', 'DAGS_FOLDER/hw_dag.py', '--cfg-path', '/tmp/tmp5ziin12p']
+[2024-12-01T12:35:25.891+0000] {standard_task_runner.py:83} INFO - Job 966: Subtask predict
+[2024-12-01T12:35:25.976+0000] {task_command.py:388} INFO - Running <TaskInstance: car_price_prediction.predict scheduled__2023-02-09T15:00:00+00:00 [running]> on host 044f1589013e
+[2024-12-01T12:35:26.070+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=car_price_prediction
+AIRFLOW_CTX_TASK_ID=predict
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-09T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-02-09T15:00:00+00:00
+[2024-12-01T12:35:26.074+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/modules/predict.py", line 15, in predict
+    model = dill.load(file)
+  File "/home/airflow/.local/lib/python3.7/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/home/airflow/.local/lib/python3.7/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/dill/_dill.py", line 462, in find_class
+    return StockUnpickler.find_class(self, module, name)
+AttributeError: Can't get attribute '_create_code' on <module 'dill._dill' from '/home/***/.local/lib/python3.7/site-packages/dill/_dill.py'>
+[2024-12-01T12:35:26.087+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=car_price_prediction, task_id=predict, execution_date=20230209T150000, start_date=20241201T123525, end_date=20241201T123526
+[2024-12-01T12:35:26.100+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 966 for task predict (Can't get attribute '_create_code' on <module 'dill._dill' from '/home/***/.local/lib/python3.7/site-packages/dill/_dill.py'>; 614)
+[2024-12-01T12:35:26.145+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2024-12-01T12:35:26.169+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

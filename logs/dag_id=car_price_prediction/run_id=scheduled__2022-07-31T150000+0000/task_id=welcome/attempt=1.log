@@ -1,0 +1,28 @@
+[2024-12-01T11:13:36.011+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: car_price_prediction.welcome scheduled__2022-07-31T15:00:00+00:00 [queued]>
+[2024-12-01T11:13:36.017+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: car_price_prediction.welcome scheduled__2022-07-31T15:00:00+00:00 [queued]>
+[2024-12-01T11:13:36.017+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-01T11:13:36.017+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2024-12-01T11:13:36.018+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-01T11:13:36.025+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): welcome> on 2022-07-31 15:00:00+00:00
+[2024-12-01T11:13:36.030+0000] {standard_task_runner.py:55} INFO - Started process 1961 to run task
+[2024-12-01T11:13:36.032+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'car_price_prediction', 'welcome', 'scheduled__2022-07-31T15:00:00+00:00', '--job-id', '189', '--raw', '--subdir', 'DAGS_FOLDER/hw_dag.py', '--cfg-path', '/tmp/tmpoxssdolx']
+[2024-12-01T11:13:36.033+0000] {standard_task_runner.py:83} INFO - Job 189: Subtask welcome
+[2024-12-01T11:13:36.074+0000] {task_command.py:388} INFO - Running <TaskInstance: car_price_prediction.welcome scheduled__2022-07-31T15:00:00+00:00 [running]> on host 88c3fb750b90
+[2024-12-01T11:13:36.128+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=car_price_prediction
+AIRFLOW_CTX_TASK_ID=welcome
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-31T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-07-31T15:00:00+00:00
+[2024-12-01T11:13:36.130+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-12-01T11:13:36.130+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'echo "welcome!"']
+[2024-12-01T11:13:36.140+0000] {subprocess.py:86} INFO - Output:
+[2024-12-01T11:13:36.142+0000] {subprocess.py:93} INFO - welcome!
+[2024-12-01T11:13:36.142+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-12-01T11:13:36.158+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=car_price_prediction, task_id=welcome, execution_date=20220731T150000, start_date=20241201T111336, end_date=20241201T111336
+[2024-12-01T11:13:36.204+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2024-12-01T11:13:36.223+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check
